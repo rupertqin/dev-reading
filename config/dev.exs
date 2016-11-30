@@ -36,7 +36,7 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :dev_reading, DevReading.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "rupert",
+  username: "postgres",
   password: "",
   database: "mydb",
   hostname: "localhost",
