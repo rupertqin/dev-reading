@@ -59,6 +59,7 @@ exports.config = {
   },
 
   modules: {
+    wrapper: 'commonjs',
     autoRequire: {
       "js/app.js": ["web/static/js/app"]
     }

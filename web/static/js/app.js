@@ -12,7 +12,27 @@
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
+// import jQuery from 'jquery'
 
+
+window.$ = window.jQuery = require('jquery')
+// window.$ = window.jQuery = jQuery
+
+console.log($, jQuery)
+// require('./index.js')
+// require('../yu.js')
+require('./semantic.js')
+
+$('.ui.accordion').accordion()
+
+
+
+// require('../../../semantic/dist/semantic.css')
+
+
+
+
+// import "../../../semantic/dist/semantic.js"
 // Import local files
 //
 // Local files can be imported directly using relative
