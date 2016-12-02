@@ -27,7 +27,6 @@ $('.ui.accordion').accordion()
 
 
 
-// require('../../../semantic/dist/semantic.css')
 
 
 

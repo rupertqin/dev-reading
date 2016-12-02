@@ -54,11 +54,11 @@ module.exports = function(gulp) {
     return gulp.src(output.uncompressed + '/**/' + globs.components + globs.ignored + '.css')
       .pipe(plumber())
       .pipe(dedupe())
-      .pipe(replace(assets.uncompressed, assets.packaged))
+      .pipe(replace(assets.uncompressed, assets.css_packaged))
       .pipe(concatCSS(filenames.concatenatedCSS, settings.concatCSS))
         .pipe(gulpif(config.hasPermission, chmod(config.permission)))
         .pipe(header(banner, settings.header))
-        .pipe(gulp.dest(output.packaged))
+        .pipe(gulp.dest(output.css_packaged))
         .pipe(print(log.created))
     ;
   });
@@ -67,12 +67,12 @@ module.exports = function(gulp) {
     return gulp.src(output.uncompressed + '/**/' + globs.components + globs.ignored + '.css')
       .pipe(plumber())
       .pipe(dedupe())
-      .pipe(replace(assets.uncompressed, assets.css_packaged))
+      .pipe(replace(assets.uncompressed, assets.packaged))
       .pipe(concatCSS(filenames.concatenatedMinifiedCSS, settings.concatCSS))
         .pipe(gulpif(config.hasPermission, chmod(config.permission)))
         .pipe(minifyCSS(settings.concatMinify))
         .pipe(header(banner, settings.header))
-        .pipe(gulp.dest(output.css_packaged))
+        .pipe(gulp.dest(output.packaged))
         .pipe(print(log.created))
     ;
   });
@@ -81,11 +81,11 @@ module.exports = function(gulp) {
     return gulp.src(output.uncompressed + '/**/' + globs.components + globs.ignored + '.js')
       .pipe(plumber())
       .pipe(dedupe())
-      .pipe(replace(assets.uncompressed, assets.packaged))
+      .pipe(replace(assets.uncompressed, assets.js_packaged))
       .pipe(concat(filenames.concatenatedJS))
         .pipe(header(banner, settings.header))
         .pipe(gulpif(config.hasPermission, chmod(config.permission)))
-        .pipe(gulp.dest(output.packaged))
+        .pipe(gulp.dest(output.js_packaged))
         .pipe(print(log.created))
     ;
   });

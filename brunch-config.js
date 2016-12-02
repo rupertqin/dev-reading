@@ -35,7 +35,7 @@ exports.config = {
     // By default, we set this to "/web/static/assets". Files in this directory
     // will be copied to `paths.public`, which is "priv/static" by default.
       assets: /^(web\/static\/assets)/,
-      ignored: /^(web\/static\/semantic)/
+      ignored: /^(web\/static\/semantic-ui)/
   },
 
   // Phoenix paths configuration
@@ -61,7 +61,7 @@ exports.config = {
   modules: {
     wrapper: 'commonjs',
     autoRequire: {
-      "js/app.js": ["web/static/js/app"]
+      "js/app.js": ["web/static/js/app.js"]
     }
   },
 

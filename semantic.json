@@ -1,5 +1,5 @@
 {
-  "base": "web/static/semantic/",
+  "base": "web/static/semantic-ui/",
   "paths": {
     "source": {
       "config": "src/theme.config",
@@ -10,6 +10,7 @@
     "output": {
       "packaged": "dist/",
       "css_packaged": "../css/",
+      "js_packaged": "../js/",
       "uncompressed": "dist/components/",
       "compressed": "dist/components/",
       "themes": "dist/themes/"
