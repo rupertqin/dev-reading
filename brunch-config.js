@@ -5,8 +5,8 @@ exports.config = {
       joinTo: "js/app.js",
       order: {
         before: [
-          "web/static/js/semantic.js",
-          "jquery/dist/jquery.js",
+          // "jquery/dist/jquery.js",
+          // "web/static/js/semantic.js",
         ]
       }
       // To use a separate vendor.js bundle, specify two files path

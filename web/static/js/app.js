@@ -12,21 +12,7 @@
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
-
-
-// window.$ = window.jQuery = require('jquery')
-// console.log($, jQuery)
-// require('./semantic.js')
-
-
-// import 'jquery'
-// import jQuery from 'jquery'
-var jQuery = require('jquery')
-// window.$ = window.jQuery = jQuery
 import './semantic.js'
-// require('./semantic.js')
-
-
 
 $('.ui.accordion').accordion()
 
