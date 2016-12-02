@@ -11,7 +11,7 @@
 //
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
-import "phoenix_html"
+// import "phoenix_html"
 import './semantic.js'
 
 $('.ui.accordion').accordion()
@@ -26,7 +26,6 @@ setTimeout(()=> {
 
 
 
-// import "../../../semantic/dist/semantic.js"
 // Import local files
 //
 // Local files can be imported directly using relative

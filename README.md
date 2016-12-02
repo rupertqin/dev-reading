@@ -13,8 +13,4 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 
 ## Learn more
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+	加了 semantic-ui, build 的时候会把 js 和 css 文件分别放入 `web/staic/` 里的 js/css 文件夹，设置在 semantic.json, `css_packaged/jss_packaged`
