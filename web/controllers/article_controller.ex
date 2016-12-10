@@ -2,10 +2,13 @@ defmodule DevReading.ArticleController do
   use DevReading.Web, :controller
 
   alias DevReading.Article
+  import Paginator
 
   def index(conn, _params) do
-    articles = Repo.all(Article)
-    render(conn, "index.html", articles: articles)
+    count = Article |> Repo.aggregate(:count, :id)
+    countNum = total_pages(Article, 20)
+    articles = Article |> order_by_id |> Repo.all
+    render(conn, "index.html", articles: articles, count: count)
   end
 
   def new(conn, _params) do

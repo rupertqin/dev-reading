@@ -29,5 +29,7 @@
 <% end %>
   </tbody>
 </table>
-
+<div>
+  <%= @count %>
+</div>
 <%= link "New article", to: article_path(@conn, :new) %>
