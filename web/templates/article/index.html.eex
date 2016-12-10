@@ -30,6 +30,9 @@
   </tbody>
 </table>
 <div class="ui pagination menu">
+  <%= link to: article_path(@conn, :index, %{page: @page}), class: "item angle left icon" do %>
+  <i class="angle left icon"></i>
+  <% end %>
   <%= for page <- 0..@total_pages do %>
       <%= link page+1, to: article_path(@conn, :index, %{page: page}), class: "item" %>
   <% end %>
