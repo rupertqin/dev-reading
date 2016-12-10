@@ -29,6 +29,26 @@
 <% end %>
   </tbody>
 </table>
+<div class="ui pagination menu">
+  <%= for page <- 0..@total_pages do %>
+      <%= link page+1, to: article_path(@conn, :index, %{page: page}), class: "item" %>
+  <% end %>
+  <div class="disabled item">
+    ...
+  </div>
+  <a class="item">
+    10
+  </a>
+  <a class="item">
+    11
+  </a>
+  <a class="item active">
+    12
+  </a>
+</div>
+<div>
+  <%= @page %>
+</div>
 <div>
   <%= @count %>
 </div>

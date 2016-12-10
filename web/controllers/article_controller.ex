@@ -3,12 +3,15 @@ defmodule DevReading.ArticleController do
 
   alias DevReading.Article
   import Paginator
+  import Util
 
   def index(conn, _params) do
+    page = (_params["page"]|| 0) |> to_int
+    page_size = (_params["page_size"] || 10) |> to_int
     count = Article |> Repo.aggregate(:count, :id)
-    countNum = total_pages(Article, 20)
-    articles = Article |> order_by_id |> Repo.all
-    render(conn, "index.html", articles: articles, count: count)
+    total_pages = total_pages(Article, page_size)
+    articles = Article |> order_by_id(page, page_size) |> Repo.all
+    render(conn, "index.html", articles: articles, count: count, page: page, total_pages: total_pages)
   end
 
   def new(conn, _params) do
