@@ -30,12 +30,12 @@
   </tbody>
 </table>
 <div class="ui pagination menu">
-  <%= link to: article_path(@conn, :index, %{page: (if @page>0, do: @page-1, else: 0;), page_size: @_params["page_size"]}), class: "item" do %>
+  <%= link to: article_path(@conn, :index, %{page: (if @page>0, do: @page-1, else: 0;)}), class: "item" do %>
     <i class="angle left icon"></i>
   <% end %>
   <%= if @total_pages>1 do %>
     <% active = if @page == 0, do: "active", else: "" %>
-    <%= link 1, to: article_path(@conn, :index, %{page: 0, page_size: @_params["page_size"]}), class: "item #{active}" %>
+    <%= link 1, to: article_path(@conn, :index, %{page: 0}), class: "item #{active}" %>
   <% end %>
   <%= if @total_pages>6 and @page>4 do %>
     <div class="disabled item">
@@ -44,14 +44,14 @@
   <% end %>
   <%= for page <- (if @page-2>=2, do: @page-2, else: 2)..(if @page+3 < @total_pages-1, do: @page+4, else: @total_pages) do %>
       <% active = if @page == page-1, do: "active", else: "" %>
-      <%= link page, to: article_path(@conn, :index, %{page: page-1, page_size: @_params["page_size"]}), class: "item #{active}" %>
+      <%= link page, to: article_path(@conn, :index, %{page: page-1}), class: "item #{active}" %>
   <% end %>
   <%= if @page+3 < @total_pages-1 do %>
     <div class="disabled item">
       ...
     </div>
   <% end %>
-  <%= link to: article_path(@conn, :index, %{page: (if @page<@total_pages-1, do: @page+1, else: @total_pages;), page_size: @_params["page_size"]}), class: "item" do %>
+  <%= link to: article_path(@conn, :index, %{page: (if @page<@total_pages-1, do: @page+1, else: @total_pages;)}), class: "item" do %>
     <i class="angle right icon"></i>
   <% end %>
 </div>
