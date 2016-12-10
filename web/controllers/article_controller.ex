@@ -11,7 +11,7 @@ defmodule DevReading.ArticleController do
     count = Article |> Repo.aggregate(:count, :id)
     total_pages = total_pages(Article, page_size)
     articles = Article |> order_by_id(page, page_size) |> Repo.all
-    render(conn, "index.html", articles: articles, count: count, page: page, total_pages: total_pages)
+    render(conn, "index.html", articles: articles, count: count, page: page, total_pages: total_pages, _params: _params)
   end
 
   def new(conn, _params) do
