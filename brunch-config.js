@@ -23,7 +23,6 @@ exports.config = {
       //     "web/static/vendor/js/bootstrap.min.js"
       //   ]
       // }
-      
     },
     stylesheets: {
       joinTo: "css/app.css",

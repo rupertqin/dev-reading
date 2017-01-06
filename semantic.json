@@ -13,7 +13,7 @@
       "js_packaged": "../js/",
       "uncompressed": "dist/components/",
       "compressed": "dist/components/",
-      "themes": "dist/themes/"
+      "themes": "../assets/semantic-ui/themes/"
     },
     "clean": "dist/"
   },
