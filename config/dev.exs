@@ -39,6 +39,6 @@ config :dev_reading, DevReading.Repo,
   username: "postgres",
   password: "",
   database: "dev_reading",
-  hostname: "postgres",
-  # hostname: "localhost",
+  # hostname: "postgres",
+  hostname: "localhost",
   pool_size: 10

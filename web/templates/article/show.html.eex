@@ -14,7 +14,7 @@
 
   <li>
     <strong>Content:</strong>
-    <%= raw @article.content %>
+    <%= raw @article.article_html %>
   </li>
 
 </ul>
