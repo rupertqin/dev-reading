@@ -33,6 +33,10 @@ defmodule DevReading.ArticleController do
   end
 
   def show(conn, %{"id" => id}) do
+    # IO.inspect conn.req_headers
+    # conn = put_session(conn, :message, "new stuff we just set in the session")
+    message = get_session(conn, :message)
+    IO.inspect message
     article = Repo.get!(Article, id)
     render(conn, "show.html", article: article)
   end

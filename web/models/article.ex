@@ -14,7 +14,7 @@ defmodule DevReading.Article do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :url, :content])
-    |> validate_required([:title, :url, :content])
+    |> cast(params, [:title, :url, :article_html])
+    |> validate_required([:title, :url, :article_html])
   end
 end
