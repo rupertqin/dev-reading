@@ -18,6 +18,8 @@ defmodule DevReading.Router do
 
     get "/", PageController, :index
     resources "/articles", ArticleController
+
+    get "/404", PageController, :page404
   end
 
   # Other scopes may use custom stacks.

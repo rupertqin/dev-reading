@@ -2,8 +2,11 @@ defmodule DevReading.ArticleController do
   use DevReading.Web, :controller
 
   alias DevReading.Article
+  alias DevReading.User
   import Paginator
   import Util
+
+  plug :authen when action in [:edit, :update, :create, :delete]
 
   def index(conn, _params) do
     page = (_params["page"]|| 0) |> to_int
@@ -33,13 +36,10 @@ defmodule DevReading.ArticleController do
   end
 
   def show(conn, %{"id" => id}) do
-    # IO.inspect conn.req_headers
-    # conn = put_session(conn, :message, "new stuff we just set in the session")
-    message = get_session(conn, :message)
-    IO.inspect message
     article = Repo.get!(Article, id)
     render(conn, "show.html", article: article)
   end
+
 
   def edit(conn, %{"id" => id}) do
     article = Repo.get!(Article, id)
@@ -71,5 +71,15 @@ defmodule DevReading.ArticleController do
     conn
     |> put_flash(:info, "Article deleted successfully.")
     |> redirect(to: article_path(conn, :index))
+  end
+
+  def authen(conn, _) do
+    user = Repo.get_by!(User, name: "rupert")
+    message = get_session(conn, :message)
+    if user.age != message do
+      conn |> redirect(to: "/404") |> halt
+    else
+      conn
+    end
   end
 end
