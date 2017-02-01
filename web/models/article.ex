@@ -1,10 +1,14 @@
 defmodule DevReading.Article do
   use DevReading.Web, :model
 
-  schema "article" do
-    field :title, :string
-    field :url, :string
-    field :article_html, :string
+  schema "articles" do
+    field :title,         :string
+    field :url,           :string
+    field :issue,         :integer
+    field :ps,            :string
+    field :html,          :string
+    field :article_html,  :string
+    field :article_text,  :string
 
     timestamps()
   end
