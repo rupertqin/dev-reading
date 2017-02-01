@@ -6,7 +6,7 @@ defmodule DevReading.ArticleController do
   import Paginator
   import Util
 
-  plug :authen when action in [:edit, :update, :create, :delete]
+  plug :authen when action in [:new, :edit, :update, :create, :delete]
 
   def index(conn, _params) do
     page = (_params["page"]|| 0) |> to_int
